@@ -1,0 +1,119 @@
+/*public class AHMADAGHAKISHIYEV20190805087ODEV4ORNEK1 {
+
+}
+
+
+
+Unit Test Nedir?
+Unit test, yazılım geliştirme sürecinde kodun en küçük parçaları olan birimlerin doğruluğunu kontrol etmek
+için yazılan testlerdir. Bu birimler genellikle fonksiyonlar, metotlar veya sınıflardır.
+
+Neden Unit Test Yaparız?
+1. Hata Tespiti: Kodun hatalarını erken aşamalarda tespit etmek için kullanılır.
+2. Refaktör İmkanı: Kodun düzeltilmesi ve iyileştirilmesi süreçlerinde yardımcı olur.
+3. Dokümantasyon: Kodun nasıl kullanılması gerektiğini belgeler.
+4. Kod Kalitesi ve Güvenilirlik: Kodun güvenilirliğini artırır ve daha kaliteli yazılım
+geliştirmemize yardımcı olur.
+
+Unit Test Frameworkları:
+Unit testlerin yazılması ve yönetilmesi için kullanılan çeşitli framework'ler mevcuttur.
+Örnekler: JUnit (Java), NUnit (.NET), pytest (Python), RSpec (Ruby), Mocha (JavaScript),
+PHPUnit (PHP), CppUnit (C++).
+
+Unit Test İçin Uyulması Gereken Kurallar:
+1. Bağımsızlık: Her test diğerlerinden bağımsız olmalıdır.
+2. Tekrarlanabilirlik: Testler her zaman aynı sonuçları vermeli ve tekrar tekrar çalıştırılmalıdır.
+3. Özerklik: Dış bağımlılıklardan etkilenmemeli ve taklit objeler kullanılmalıdır.
+4. Beklentiler: Her test belirli girdilere karşılık belirli çıktıları doğrulamalıdır.
+5. Performans: Testler hızlı çalışmalı ve geliştirme sürecini yavaşlatmamalıdır.
+6. Sık Sık Çalıştırılabilirlik: Testler sık sık çalıştırılmalı ve otomatik olarak
+çalıştırılabilmesi için yapılandırılmalıdır.
+
+Bu kurallara ve en iyi uygulamalara uyarak, yazılım geliştirmenin daha sağlam ve
+güvenilir olmasını sağlayabilirsiniz.
+ */
+/*
+2)
+Tasarım Desenleri (Design Patterns): Yazılım geliştirme sürecinde karşılaşılan yaygın problemleri çözmek
+ve daha iyi tasarlanmış, sürdürülebilir kod üretmek için kullanılan şablonlar ve yöntemlerdir.
+Creational Patterns (Oluşturulma Desenleri): Nesnelerin yaratılma şekilleriyle ilgilidir.
+İki örnek: Singleton (Yalnız), Factory (Fabrika).
+Structural Patterns (Yapısal Desenler): Sınıfların ve nesnelerin bir araya gelme şekilleriyle ilgilidir.
+İki örnek: Adapter (Adaptör), Decorator (Dekoratör).
+Behavioral Patterns (Davranışsal Desenler): Nesneler arasındaki işbirliği ve iletişimle ilgilidir.
+İki örnek: Observer (Gözlemci), Strategy (Strateji).
+
+3)
+ */
+/*
+import javax.swing.JOptionPane;
+public class AHMADAGHAKISHIYEV20190805087ODEV4ORNEK1 {
+    public static void main(String[] args) {
+        String sifre=sifreolusturucu();
+    }
+    public static String sifreolusturucu(){
+        String input=JOptionPane.showInputDialog("Şifre oluşturun\n1.Şifre en az 8 karakter içermelidir\n2.Şifre en fazla 95 karakter içermelidir.\n3.Şifre en az bir harf içermelidir.\n4.Şifre en az bir rakam içermelidir\n5.Şifre en az bir ozel karakter içermelidir(@$£*)\n6.Şifre arasi boşluk olmamalıdır");
+        if(sifrekontrol(input)){
+            return input;
+        }else {
+            JOptionPane.showMessageDialog(null,"Gecersiz sifre!");
+        }
+        return input;
+    }
+    public static boolean sifrekontrol(String sifre){
+        boolean harficerme= false;
+        boolean rakamicerme= false;
+        boolean ozelkarakter=false;
+        boolean boslukkontrol=true;
+        if (sifre.length()<8){
+            return false;
+        } else if (sifre.length()>95) {
+            return false;
+        }
+        for (char sfr: sifre.toCharArray()){
+            if(Character.isLetter(sfr)){
+                harficerme=true;
+            }else if(Character.isDigit(sfr)){
+                rakamicerme=true;
+            } else if (Character.isWhitespace(sfr)) {
+                boslukkontrol=false;
+            }
+            if (harficerme && rakamicerme && boslukkontrol){
+                return true;
+            }
+            JOptionPane.showMessageDialog(null,"Sifre olusturuldu: "+ sifre);
+        }
+        return false;
+    }
+}
+*/
+public class AHMADAGHAKISHIYEV20190805087ODEV4ORNEK1 {
+    public static void main(String[] args) {
+        int n = 30;
+        double sum = 0;
+        // Serinin terimlerini hesaplamak için bir döngü kullanılır.
+        for (int i = 0; i <= n; i++) {
+            // 1/i! terimi hesaplanır ve toplama eklenir.
+            sum += 1.0 / factorial(i);
+        }
+        System.out.println("e = " + sum); // Hesaplanan yaklaşık e değeri ekrana yazdırılır.
+    }
+    // Faktoriyel hesaplama metodu
+    public static int factorial(int n) {
+        if (n == 0) {
+            return 1; // 0 faktoriyel 1'dir.
+        }
+        int result = 1;
+
+        // Faktoriyel hesaplamak için bir döngü kullanılır.
+        for (int i = 1; i <= n; i++) {
+            result *= i; // Her terim çarpılır.
+        }
+        return result; // Faktoriyel sonucu geri döndürülür.
+    }
+}
+
+
+
+
+
