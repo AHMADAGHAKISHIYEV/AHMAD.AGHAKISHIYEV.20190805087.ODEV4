@@ -1,0 +1,33 @@
+public class ornek3 {
+    public static void main(String[] args) {
+        // 1'den 9999'a kadar olan sayıları kontrol ediyoruz
+        for (int x = 1; x <= 9999; x++) {
+            // x'in bölenleri toplamını hesaplıyoruz
+            int y = bolenlertoplami(x);
+            // İki sayının arkadaş olup olmadığını kontrol ediyoruz ve eğer arkadaşlarsa sonucu ekrana yazdırıyoruz
+            if (areFriends(x, y)) {
+                System.out.println(x + " ve " + y + " arkadaş sayılardır.");
+            }
+        }
+    }
+    public static boolean areFriends(int sayi1,int sayi2){
+        int bolenlertoplamiX=bolenlertoplami(sayi1);
+        int bolenlertoplamiY=bolenlertoplami(sayi2);
+        if(sayi1== sayi2){
+            return false;
+        }
+        return (bolenlertoplamiX== sayi2) && (bolenlertoplamiY==sayi1);
+    }
+    public static int bolenlertoplami(int number) {
+        int toplam = 1; // 1 her zaman bir sayının bölenidir.
+
+        // Sayının yarısına kadar olan bölenlerin toplamını hesaplıyoruz
+        for (int i = 2; i <= number / 2; i++) {
+            if (number % i == 0) {
+                toplam =toplam + i;
+            }
+        }
+
+        return toplam;
+    }
+}
