@@ -87,31 +87,7 @@ public class AHMADAGHAKISHIYEV20190805087ODEV4ORNEK1 {
     }
 }
 */
-public class AHMADAGHAKISHIYEV20190805087ODEV4ORNEK1 {
-    public static void main(String[] args) {
-        int n = 30;
-        double sum = 0;
-        // Serinin terimlerini hesaplamak için bir döngü kullanılır.
-        for (int i = 0; i <= n; i++) {
-            // 1/i! terimi hesaplanır ve toplama eklenir.
-            sum += 1.0 / factorial(i);
-        }
-        System.out.println("e = " + sum); // Hesaplanan yaklaşık e değeri ekrana yazdırılır.
-    }
-    // Faktoriyel hesaplama metodu
-    public static int factorial(int n) {
-        if (n == 0) {
-            return 1; // 0 faktoriyel 1'dir.
-        }
-        int result = 1;
 
-        // Faktoriyel hesaplamak için bir döngü kullanılır.
-        for (int i = 1; i <= n; i++) {
-            result *= i; // Her terim çarpılır.
-        }
-        return result; // Faktoriyel sonucu geri döndürülür.
-    }
-}
 
 
 
