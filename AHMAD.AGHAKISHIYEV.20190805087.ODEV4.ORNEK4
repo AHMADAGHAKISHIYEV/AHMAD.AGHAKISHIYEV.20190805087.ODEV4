@@ -1,0 +1,25 @@
+public class ornek4 {
+    public static boolean isPerfect(int sayi) {
+        int bolenlertoplami = 0;
+
+        // Sayının kendisi hariç bölenlerinin toplamını hesaplayan döngü
+        for (int i = 1; i <= sayi / 2; i++) {
+            if (sayi % i == 0) {
+                bolenlertoplami=bolenlertoplami + i;
+            }
+        }
+        // Bölenlerin toplamı sayıya eşitse, sayı mükemmel bir sayıdır
+        return bolenlertoplami == sayi;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("1'den 9999'a kadar olan mükemmel sayılar:");
+        // 1'den 9999'a kadar olan tüm sayıları kontrol eden döngü
+        for (int i = 2; i <= 9999; i++) {
+            if (isPerfect(i)) {
+                // Eğer bir sayı mükemmelse, bu sayıyı ekrana yazdırır
+                System.out.println(i);
+            }
+        }
+    }
+}
