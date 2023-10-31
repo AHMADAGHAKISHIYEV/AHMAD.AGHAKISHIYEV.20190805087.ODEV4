@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class ornek2 {
+    public static int sumFactors(int sayi){
+        int carpan=1;
+        for(int i=2;i<sayi;i++){
+            if(sayi % i == 0){
+                carpan=carpan+i;
+            }
+        }
+        return carpan;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Pozitif tam dayi giriniz: ");
+        int girilensayi=scanner.nextInt();
+        int sonuc=sumFactors(girilensayi);
+        System.out.println("Sonuc: " + sonuc);
+    }
+}
+
